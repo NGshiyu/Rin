@@ -1,0 +1,456 @@
+# Instincts generated from https://github.com/NGshiyu/Rin
+# Generated: 2026-05-25T07:48:12.071Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: Rin-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/NGshiyu/Rin
+---
+
+# Rin Commit Length
+
+## Action
+
+Write moderate-length commit messages (~52 characters)
+
+## Evidence
+
+- Average commit message length: 52 chars
+- Based on 7 commits
+
+---
+id: Rin-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/NGshiyu/Rin
+---
+
+# Rin Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: Rin-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/NGshiyu/Rin
+---
+
+# Rin Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: Rin-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/NGshiyu/Rin
+---
+
+# Rin Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: Rin-arch-type-based
+trigger: "when adding new code"
+confidence: 0.8
+domain: architecture
+source: repo-analysis
+source_repo: https://github.com/NGshiyu/Rin
+---
+
+# Rin Arch Type Based
+
+## Action
+
+Place code in the appropriate type folder (components/, services/, utils/, etc.)
+
+## Evidence
+
+- Type-based module organization detected
+- Folders: 
+
+---
+id: Rin-workflow-database-migration
+trigger: "when modifying the database schema or adding tables"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/NGshiyu/Rin
+---
+
+# Rin Workflow Database Migration
+
+## Action
+
+Follow the database-migration workflow:
+1. Create migration file
+2. Update schema definitions
+3. Generate/update types
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~21x per month
+- Files: **/schema.*, **/types.ts
+
+---
+id: Rin-workflow-feature-development-with-schema-migration-tests-and-i18n
+trigger: "when doing feature development with schema migration tests and i18n"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/NGshiyu/Rin
+---
+
+# Rin Workflow Feature Development With Schema Migration Tests And I18n
+
+## Action
+
+Follow the feature-development-with-schema-migration-tests-and-i18n workflow:
+1. Create or update SQL migration file in server/sql/NNNN.sql
+2. Update Drizzle schema in server/src/db/schema.ts
+3. Update shared API types in packages/api/src/types.ts
+4. Update validation schemas in packages/api/src/schemas.ts
+5. Implement backend logic in server/src/services/*.ts
+6. Update or create frontend UI in client/src/page/*.tsx
+7. Add or update locale translation files in client/public/locales/*/translation.json
+8. Update test fixtures in server/tests/fixtures/index.ts
+9. Add or update backend tests in server/src/services/__tests__/*.test.ts
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: server/sql/NNNN.sql, server/src/db/schema.ts, packages/api/src/types.ts
+
+---
+id: Rin-workflow-atomic-revert-of-multi-file-feature
+trigger: "when doing atomic revert of multi file feature"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/NGshiyu/Rin
+---
+
+# Rin Workflow Atomic Revert Of Multi File Feature
+
+## Action
+
+Follow the atomic-revert-of-multi-file-feature workflow:
+1. Identify all files changed by the feature/fix commit(s)
+2. Create a revert commit that restores all affected files to their previous state
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: client/src/page/*.tsx, packages/api/src/schemas.ts, packages/api/src/types.ts
+
+---
+id: rin-instinct-file-naming-camelCase
+trigger: "When creating a new file in the codebase"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: NGshiyu/Rin
+---
+
+# Rin Instinct File Naming CamelCase
+
+## Action
+
+Name the file using camelCase (e.g., userProfile.ts)
+
+## Evidence
+
+- Pattern in namingConventions.files: camelCase
+
+---
+id: rin-instinct-function-naming-camelCase
+trigger: "When defining a new function"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: NGshiyu/Rin
+---
+
+# Rin Instinct Function Naming CamelCase
+
+## Action
+
+Name the function using camelCase (e.g., getUserData)
+
+## Evidence
+
+- Pattern in namingConventions.functions: camelCase
+
+---
+id: rin-instinct-class-naming-pascalCase
+trigger: "When defining a new class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: NGshiyu/Rin
+---
+
+# Rin Instinct Class Naming PascalCase
+
+## Action
+
+Name the class using PascalCase (e.g., UserService)
+
+## Evidence
+
+- Pattern in namingConventions.classes: PascalCase
+
+---
+id: rin-instinct-constant-naming-screaming-snake-case
+trigger: "When declaring a constant"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: NGshiyu/Rin
+---
+
+# Rin Instinct Constant Naming Screaming Snake Case
+
+## Action
+
+Name the constant using SCREAMING_SNAKE_CASE (e.g., MAX_RETRIES)
+
+## Evidence
+
+- Pattern in namingConventions.constants: SCREAMING_SNAKE_CASE
+
+---
+id: rin-instinct-import-style-relative
+trigger: "When importing modules within the codebase"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: NGshiyu/Rin
+---
+
+# Rin Instinct Import Style Relative
+
+## Action
+
+Use relative import paths (e.g., import x from '../utils/x')
+
+## Evidence
+
+- Pattern in importStyle: relative
+
+---
+id: rin-instinct-export-style-named
+trigger: "When exporting functions, classes, or constants"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: NGshiyu/Rin
+---
+
+# Rin Instinct Export Style Named
+
+## Action
+
+Use named exports (e.g., export function foo {})
+
+## Evidence
+
+- Pattern in exportStyle: named
+
+---
+id: rin-instinct-testing-location-mixed
+trigger: "When writing tests for a module"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: NGshiyu/Rin
+---
+
+# Rin Instinct Testing Location Mixed
+
+## Action
+
+Place test files either alongside the implementation or in a dedicated __tests__ directory, as appropriate
+
+## Evidence
+
+- Pattern in architecture.folderStructure.testLocation: mixed
+- Example: server/src/services/__tests__/*.test.ts
+
+---
+id: rin-instinct-testing-backend-services
+trigger: "When adding or modifying backend logic in server/src/services/*.ts"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: NGshiyu/Rin
+---
+
+# Rin Instinct Testing Backend Services
+
+## Action
+
+Add or update corresponding tests in server/src/services/__tests__/*.test.ts
+
+## Evidence
+
+- Workflow step: Add or update backend tests in server/src/services/__tests__/*.test.ts
+- Example: feature-development-with-schema-migration-tests-and-i18n
+
+---
+id: rin-instinct-testing-update-fixtures
+trigger: "When a feature or schema change requires new test data"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: NGshiyu/Rin
+---
+
+# Rin Instinct Testing Update Fixtures
+
+## Action
+
+Update test fixtures in server/tests/fixtures/index.ts
+
+## Evidence
+
+- Workflow step: Update test fixtures in server/tests/fixtures/index.ts
+- Example: feature-development-with-schema-migration-tests-and-i18n
+
+---
+id: rin-instinct-git-commit-prefixes
+trigger: "When writing a commit message"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: NGshiyu/Rin
+---
+
+# Rin Instinct Git Commit Prefixes
+
+## Action
+
+Prefix the commit message with feat, fix, or chore as appropriate (e.g., feat: add guest comment support)
+
+## Evidence
+
+- Pattern in commits.prefixes: ['feat', 'chore', 'fix']
+- Examples: 'feat: add guest comment support (#514)'
+
+---
+id: rin-instinct-git-revert-pattern
+trigger: "When reverting a previous commit"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: NGshiyu/Rin
+---
+
+# Rin Instinct Git Revert Pattern
+
+## Action
+
+Use 'Revert "<original commit message>"' as the commit message
+
+## Evidence
+
+- Examples: 'Revert "fix: rebuild comments table in 0010.sql to make user_id nullable"'
+
+---
+id: rin-instinct-workflow-feature-dev-schema-i18n-tests
+trigger: "When implementing a new user-facing feature that requires database changes, API updates, validation, backend/frontend logic, localization, and tests"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: NGshiyu/Rin
+---
+
+# Rin Instinct Workflow Feature Dev Schema I18n Tests
+
+## Action
+
+Follow the workflow: create/update SQL migration, update schema, update API types, update validation schemas, implement backend, update frontend UI, update locales, update fixtures, add/update backend tests
+
+## Evidence
+
+- Workflow: feature-development-with-schema-migration-tests-and-i18n
+- Commit sequences and file patterns in workflow example
+
+---
+id: rin-instinct-workflow-atomic-revert
+trigger: "When needing to revert a recently merged multi-file feature or fix"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: NGshiyu/Rin
+---
+
+# Rin Instinct Workflow Atomic Revert
+
+## Action
+
+Identify all files changed by the original commit(s) and create a single revert commit restoring all affected files
+
+## Evidence
+
+- Workflow: atomic-revert-of-multi-file-feature
+- Examples: Revert commits affecting multiple files
+
+---
+id: rin-instinct-workflow-database-migration
+trigger: "When making database schema changes"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: NGshiyu/Rin
+---
+
+# Rin Instinct Workflow Database Migration
+
+## Action
+
+Create a migration file, update schema definitions, and generate/update types in the respective files
+
+## Evidence
+
+- Workflow: database-migration
+- Commit sequence: Create migration file, Update schema definitions, Generate/update types
+
